@@ -4,7 +4,7 @@ bool CAEN::connect() {
     int sysHndl = -1;
     CAENHVRESULT ret = -1;
     ret = CAENHV_InitSystem((CAENHV_SYSTEM_TYPE_t)0, lk, (char *)address_.c_str(), username_.c_str(), passwd_.c_str(), &sysHndl);
-
+    
     if(ret == CAENHV_OK) {
         std::cout << "Mainframe " << name_ << " connection established (sysHndl " << sysHndl << ")" << std::endl;
         sysHndl_ = sysHndl;

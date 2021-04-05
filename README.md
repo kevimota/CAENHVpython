@@ -41,5 +41,12 @@ After that you should connect to the mainframe:
 
 ``` CAEN1.connect() ```
 
-It will return True if successful, False if not.
+It will return True if successful, False if not. Now you can use the methods to control the channels.
 
+A small documentation of the class can be found in:
+
+``` help(CAEN) ```
+
+To disconnect run:
+
+``` CAEN1.disconnect() ```
