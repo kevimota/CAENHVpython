@@ -66,14 +66,16 @@ class CAEN {
         };
 };
 
+const char *doc_init = R"(Creates the CAEN obj.
+- name: A name of your choice for the object.
+- username: username of the mainframe.
+- password: password of the mainframe.
+- ip_address: ipaddress of the mainframe.)";
+
 PYBIND11_MODULE(CAENHV, m) {
     m.doc() = "Module to connect to CAEN HV boards";
     py::class_<CAEN>(m, "CAEN")
-        .def(py::init<std::string, std::string, std::string, std::string>(), "Creates the CAEN obj.\n
-                                                                              - name: A name of your choice for the object.\n
-                                                                              - username: username of the mainframe.\n
-                                                                              - password: password of the mainframe.\n
-                                                                              - ip_address: ipaddress of the mainframe.")
+        .def(py::init<std::string, std::string, std::string, std::string>(), doc_init)
         .def("connect", &CAEN::connect, "Connect to the mainframe")
         .def("disconnect", &CAEN::disconnect, "Disconnect from the mainframe")
         .def("setintvalue", &CAEN::setintvalue, "Set a int value on parameter 'param' of the 'slot.ch' of the mainframe")
