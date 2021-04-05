@@ -67,10 +67,10 @@ class CAEN {
 };
 
 const char *doc_init = R"(Creates the CAEN obj.
-- name: A name of your choice for the object.
-- username: username of the mainframe.
-- password: password of the mainframe.
-- ip_address: ipaddress of the mainframe.)";
+- arg0 - name: A name of your choice for the object.
+- arg1 - username: username of the mainframe.
+- arg2 - passwd: password of the mainframe.
+- arg3 - address: ipaddress of the mainframe.)";
 
 PYBIND11_MODULE(CAENHV, m) {
     m.doc() = "Module to connect to CAEN HV boards";
