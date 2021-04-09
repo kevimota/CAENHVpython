@@ -60,7 +60,7 @@ class CAEN {
         };
         float getStatus(int ch, int slot) {
             return getintvalue("Status", ch, slot);
-        }
+        };
         bool powerOn(int ch, int slot) {
             return setintvalue("Pw", ch, slot, 1);
         };
@@ -92,6 +92,7 @@ PYBIND11_MODULE(CAENHV, m) {
         .def("setV0", &CAEN::setV0, "Set value on V0Set parameter of the board on 'slot.ch' of the mainframe")
         .def("getVMon", &CAEN::getVMon, "Get the VMon parameter of the board on 'slot.ch' of the mainframe")
         .def("getIMon", &CAEN::getIMon, "Get the IMon parameter of the board on 'slot.ch' of the mainframe")
+        .def("getStatus", &CAEN::getStatus, "Get the Status parameter of the board on 'slot.ch' of the mainframe")
         .def("powerOn", &CAEN::powerOn, "Power on the channel 'slot.ch' of the mainframe")
         .def("powerOff", &CAEN::powerOff, "Power off the channel 'slot.ch' of the mainframe");
 }
