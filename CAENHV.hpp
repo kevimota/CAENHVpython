@@ -58,6 +58,9 @@ class CAEN {
         float getIMon(int ch, int slot) {
             return getfloatvalue("IMon", ch, slot);
         };
+        float getStatus(int ch, int slot) {
+            return getintvalue("Status", ch, slot);
+        }
         bool powerOn(int ch, int slot) {
             return setintvalue("Pw", ch, slot, 1);
         };
